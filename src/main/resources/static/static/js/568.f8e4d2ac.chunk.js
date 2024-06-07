@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkCapstone_Subway_TS=self.webpackChunkCapstone_Subway_TS||[]).push([[568],{5568:function(e,a,n){n.r(a);n(2791);var t=n(5448),s=n(184);a.default=function(){var e=new URLSearchParams(window.location.search).get("stationName");return(0,s.jsx)(t.Z,{title:"\uc0c1\ud589\ud558\ud589",description:"\ud14c\uc2a4\ud2b8 \ud398\uc774\uc9c0",children:(0,s.jsxs)("div",{children:["\uc120\ud0dd\ub41c \uc5ed \uc774\ub984: ",e]})})}}}]);
+//# sourceMappingURL=568.f8e4d2ac.chunk.js.map

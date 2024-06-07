@@ -1,0 +1,11 @@
+*.csv
+*.lock
+__pycache__/*
+src/main/AI/*
+src/main/frontend/*
+build/*
+mariadb/*
+nginx
+out/*
+.gradle/*
+gradle/*

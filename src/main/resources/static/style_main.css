@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    padding-top: 50px;
+
+}
+
+/* Paragraph 설정 */
+p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Title 설정 */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Session 값 확인 부분 스타일 */
+.session-value {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}

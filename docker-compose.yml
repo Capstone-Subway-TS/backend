@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./src/main/frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"  # React 개발 서버 포트
+    depends_on:
+      - flask # 백엔드 서비스에 의존
+      - backend
+    networks:
+      - app_network  # 네트워크 공유 설정
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/board?useSSL=false&allowPublicKeyRetrieval=true
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 1234
+    ports:
+      - "8080:8080"  # Spring Boot 애플리케이션 포트
+    #depends_on:
+     # - database
+    networks:
+      - app_network  # 네트워크 공유 설정
+
+  #database:
+    #image: mysql
+    #environment:
+     # MYSQL_ROOT_PASSWORD: 1234
+      #MYSQL_DATABASE: board
+   # ports:
+     # - "3002:3306"
+    #volumes:
+     # - ./mariadb/data:/var/lib/mysql
+      #- ./mariadb/conf.d:/etc/mysql/conf.d
+      #- ./mariadb/db/initdb.d:/docker-entrypoint-initdb.d
+    #networks:
+      #- app_network  # 네트워크 공유 설정
+
+  flask:
+    build:
+      context: ./src/main/AI
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"  # Flask 서버 포트
+    networks:
+      - app_network  # 네트워크 공유 설정
+
+networks:
+  app_network:  # 네트워크 이름 지정
+
+  #nginx:
+   # image: nginx
+    #volumes:
+     # - ./src/main/frontend/nginx.conf:/etc/nginx/nginx.conf
+      #- ./src/main/frontend/build:/usr/share/nginx/html
+    #ports:
+    #  - "80:80"
+    #depends_on:
+     # - frontend
