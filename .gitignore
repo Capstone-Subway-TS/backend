@@ -36,5 +36,6 @@ out/
 .vscode/
 mariadb/
 
-src/main/frontend
-src/main/AI
+src/main/frontend/
+src/main/AI/
+build/
